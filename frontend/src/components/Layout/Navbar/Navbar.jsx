@@ -1,27 +1,20 @@
-import Navmenu from "./Navmenu"
-import Topbar from "./Topbar"
+import Navmenu from "./Navmenu";
+import Topbar from "./Topbar";
+import Logo from "../../../assets/Logo.png";
 
-
-const navbar = () => {
+const Navbar = () => {
   return (
-    <>
-    <div className="navbar-container">
-        <div className="row">
-            <div className="col-md-3">
-                Image
-            </div>
-            <div className="col-md-9">
-                <div className="">
-                    <Topbar/>
-                </div>
-                <div className="">
-                    <Navmenu/>
-                </div>
-            </div>
-        </div>
-    </div>
-    </>
-  )
-}
+    <header className="navbar-container">
+      <div className="navbar-left">
+        <img src={Logo} alt="PrintOurHub Logo" className="navbar-logo" />
+      </div>
 
-export default navbar
+      <div className="navbar-right">
+        <Topbar />
+        <Navmenu />
+      </div>
+    </header>
+  );
+};
+
+export default Navbar;

@@ -1,0 +1,210 @@
+/* =========================
+   🌐 Global Theme
+   ========================= */
+:root {
+  --primary-color: #007bff;
+  --primary-hover: #0056b3;
+  --danger-color: #e63946;
+  --success-color: #28a745;
+  --text-color: #333;
+  --bg-light: #f8f9fa;
+  --bg-white: #ffffff;
+  --border-color: #ddd;
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =========================
+   🔹 Topbar Styles
+   ========================= */
+.topbar-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--bg-light);
+  color: var(--text-color);
+  font-weight: 500;
+  font-family: var(--font-main);
+  padding: 8px 20px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 14px;
+}
+
+.topbar-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.topbar-item i {
+  font-size: 14px;
+}
+
+/* Icon colors */
+.topbar-item:nth-child(1) i { color: var(--primary-color); }
+.topbar-item:nth-child(2) i { color: var(--danger-color); }
+.topbar-item:nth-child(3) i { color: var(--success-color); }
+
+/* Responsive Topbar */
+@media (max-width: 768px) {
+  .topbar-container {
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13px;
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+/* =========================
+   🔹 Navmenu Styles
+   ========================= */
+.navmenu-container {
+  background-color: var(--bg-white);
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+.navmenu-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  transition: max-height 0.3s ease;
+}
+
+.navmenu-item a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.navmenu-item a:hover {
+  color: var(--primary-color);
+}
+
+/* Contact Button */
+.navmenu-btn {
+  background-color: var(--primary-color);
+  color: #fff !important;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,123,255,0.2);
+}
+
+.navmenu-btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   🔹 Mobile Nav (Hamburger)
+   ========================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1001; /* ensures it's clickable */
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: var(--text-color);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger animation when active */
+.navmenu-container.active .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.navmenu-container.active .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+.navmenu-container.active .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+@media (max-width: 768px) {
+  .navmenu-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .navmenu-container.active .navmenu-list {
+    max-height: 400px;
+  }
+
+  .hamburger {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 16px;
+  }
+}
+
+/* =========================
+   🔹 Navbar Container
+   ========================= */
+.navbar-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-color);
+  flex-wrap: wrap;
+}
+
+.navbar-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  max-height: 60px;
+  width: auto;
+}
+
+.navbar-right {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Responsive Navbar */
+@media (max-width: 992px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .navbar-right {
+    width: 100%;
+  }
+
+  .navbar-logo {
+    max-height: 50px;
+    margin-bottom: 10px;
+  }
+}

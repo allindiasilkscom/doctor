@@ -1,15 +1,24 @@
+import './Navbar.css';
 
 const Topbar = () => {
   return (
-    <>
     <div className="topbar-container">
-        <h6>Number</h6>
-        <h6>Order@printourhub.com</h6>
-        <h6>Delivery</h6>
+      <div className="topbar-item">
+        <i className="fa-solid fa-phone"></i>
+        <span>7738537913</span>
+      </div>
 
+      <div className="topbar-item">
+        <i className="fa-solid fa-envelope"></i>
+        <span>Order@printourhub.com</span>
+      </div>
+
+      <div className="topbar-item">
+        <i className="fa-solid fa-truck"></i>
+        <span>Delivery</span>
+      </div>
     </div>
-    </>
-)
-}
+  );
+};
 
-export default Topbar
+export default Topbar;
