@@ -3,10 +3,13 @@ import Mesg from "../components/static/contactMessage/ContactMessage";
 
 const Home = () => {
   return (
+    <>
     <div>
       <Slider />
       <Mesg />
     </div>
+    </>
+    
   );
 };
 

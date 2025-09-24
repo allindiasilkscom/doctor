@@ -4,6 +4,7 @@ import Contact from "./pages/Contact";
 import Aboutus from "./pages/Aboutus";
 import Navbar from "./components/Layout/Navbar/Navbar";
 import Products from "./pages/Products";
+import Footer from "./components/Layout/Navbar/Footer/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/aboutus" element={<Aboutus />} />
         <Route path="/products" element={<Products />} />
       </Routes>
+      <Footer/>
     </>
   );
 }
